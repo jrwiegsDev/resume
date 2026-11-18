@@ -1,0 +1,4 @@
+.venv/
+rendercv_output/
+*.pdf
+.DS_Store

@@ -1,0 +1,101 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.8/schema.json
+cv:
+  name: Joe Wiegert
+  headline: Backend Developer
+  email: jrwiegs@gmail.com
+  website: https://www.jrwportfolio.com/
+  social_networks:
+    - network: LinkedIn
+      username: jrwiegs
+    - network: GitHub
+      username: jrwiegsDev
+  sections:
+    projects:
+      - name: '[DoPolitics](https://dopolitics.org)'
+        date: 2026
+        summary: The idea behind this project was to give voters one plain-language place to hold their members of Congress accountable. Enter an address and see who represents you, how they vote, how often they show up and what the bills behind those votes do. Live since November 2026 and updated every night from government data.
+        highlights:
+          - 'Runs on Render from an infrastructure-as-code Blueprint: a Python and FastAPI web service, managed PostgreSQL with PostGIS, and six nightly cron jobs that load votes, bills and members with retries and incremental downloads.'
+          - Every change goes through a pull request with required lint, test and browser-test checks in GitHub Actions (750+ pytest tests against a real Postgres, 27 Playwright browser tests), plus rate limiting, strict security headers and addresses that are never logged.
+          - Plain-language bill summaries are drafted with the Claude API under a nightly spending cap and reviewed by hand. I tuned the prompt over three review rounds, from 23 to 32 approvals out of 33.
+      - name: '[Newsletter and Website API, Local Democratic Club](https://github.com/jrwiegsDev/otown-dems-newsletter)'
+        start_date: 2025-10
+        end_date: 2026-09
+        summary: The idea behind this project was to replace the club's emails from a personal Gmail account, which exposed every recipient's address, with a private subscriber list, a newsletter pipeline, an event calendar and a weekly issue poll. Sunset in September 2026, when the club decided to focus on its social media presence and shut down the website.
+        highlights:
+          - Built the Node.js and Express REST API, live WebSocket poll results, MongoDB data model, password-protected admin dashboard and SMTP email pipeline.
+          - In production for a year, the list grew to 179 subscribers, and it delivered 3,200+ emails in its last six months, with 26+ events and 42 weeks of poll results run through the dashboard.
+    experience:
+      - company: Relentless
+        position: QA Associate | Program Organizer
+        start_date: 2026-05
+        end_date: 2026-11
+        summary: Program Organizer transitioned to QA work June 2026
+        highlights:
+          - Brought into the engineering team's manual QA process 7 weeks into a program operations role. A logout gap I flagged in my first regression pass was accepted as a missing feature and shipped to staging two days later.
+          - Ran 8 regression passes, 15 pull request QA runs, 4 end-to-end manual test runs and 7 pre-release feature test runs on a TypeScript and Postgres web app, across per-PR preview, shared staging and production environments.
+          - 'Designed and ran the test plan for a new participant cash-incentive payment system based on provided criteria: 11 test accounts, each mapped to its expected payout. Every payout was correct, and totals reconciled in the admin console.'
+          - Diagnosed defects at the HTTP layer with browser DevTools. Found a high-priority privacy defect by reading the raw server response behind a blank page. Documented HTTP 422 and 429 responses in a report that led to a fix, which I then verified.
+          - 'Wrote 4 new regression test cases, updated 5 more, and rewrote the 5 highest-priority cases into a structured format I proposed (purpose, setup, steps, pass/fail), which the CTO approved. Also set the team''s standard for QA run cards: numbered steps with one check each, plus per-step notes.'
+      - company: Julie Fortier for Congress (IL-12)
+        position: Software Engineer, previously Deputy Campaign Manager
+        start_date: 2025-10
+        end_date: 2026-08
+        highlights:
+          - Built the campaign website (React, Vite) and a volunteer signup and staff admin platform (React, Node.js, Express, MongoDB) with authentication and role-based access that coordinated 340+ volunteers.
+          - Directed volunteer operations, including team leads, large-scale outreach and merchandise logistics.
+      - company: ApexNetwork Physical Therapy
+        position: Patient Case Auditor
+        start_date: 2023-11
+        end_date: 2026-01
+        highlights:
+          - Validated large billing and patient-record datasets with over 99% accuracy.
+          - Identified workflow inefficiencies and introduced new processes that cut billing cycle time by 32%.
+      - company: Relentless
+        position: Digital Organizing Intern
+        start_date: 2024-09
+        end_date: 2024-11
+    skills:
+      - label: Languages
+        details: Python, SQL (PostgreSQL, PostGIS)
+      - label: Backend
+        details: FastAPI, Pydantic, psycopg, Alembic, REST API design, HTTP caching
+      - label: Testing
+        details: pytest, Playwright, test planning and design, regression and end-to-end testing, Chrome DevTools
+      - label: DevOps
+        details: GitHub Actions, Docker, Docker Compose, pre-commit, Dependabot, Render
+      - label: AI
+        details: Claude API (Messages, Batch), Claude Code with MCP
+      - label: Also
+        details: JavaScript, Node.js, Express, MongoDB, React, pandas, Excel, Tableau, Linear, Notion, Zendesk
+    education:
+      - institution: Southern Illinois University Edwardsville
+        area: Civil Engineering
+        degree: BS
+        date: 2019-05
+        location: Edwardsville, IL
+        highlights:
+          - Co-founder, SIUE Initiative to Create Awareness, Recognition, and Education (iCARE)
+design:
+  theme: classic
+  page:
+    size: us-letter
+    top_margin: 0.5in
+    bottom_margin: 0.5in
+    left_margin: 0.6in
+    right_margin: 0.6in
+    show_footer: false
+  colors:
+    name: rgb(47, 125, 79)
+    headline: rgb(47, 125, 79)
+    connections: rgb(47, 125, 79)
+    section_titles: rgb(47, 125, 79)
+    links: rgb(15, 118, 110)
+  sections:
+    show_time_spans_in: []
+settings:
+  current_date: today
+  render_command:
+    dont_generate_html: true
+    dont_generate_markdown: true
+    dont_generate_png: false
